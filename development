@@ -1,0 +1,8 @@
+[web]
+192.168.33.110
+
+[db]
+192.168.33.110
+
+[all:vars]
+remote_user=vagrant

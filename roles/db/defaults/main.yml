@@ -1,0 +1,7 @@
+---
+# defaults file for db
+mysql_root_password: 12345678
+mysql_databases:
+  - name: sample_app
+    encoding: latin1
+    collation: latin1_general_ci
