@@ -5,3 +5,8 @@ mysql_databases:
   - name: sample_app
     encoding: latin1
     collation: latin1_general_ci
+mysql_users:
+  - name: sampleuser
+    host: "%"
+    password: 12345678
+    priv: "sample_app.*:ALL"
