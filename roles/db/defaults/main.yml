@@ -8,5 +8,5 @@ mysql_databases:
 mysql_users:
   - name: sampleuser
     host: "%"
-    password: 12345678
+    password: '12345678'
     priv: "sample_app.*:ALL"
