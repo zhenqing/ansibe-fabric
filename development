@@ -1,7 +1,7 @@
 [web]
-192.168.33.100
+localhost
 [db]
-192.168.33.100
+localhost
 
 [all:vars]
 remote_user=vagrant

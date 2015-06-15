@@ -13,9 +13,11 @@
   git: repo=https://github.com/zhenqing/opencfp.git dest=/var/www/html/opencfp
   become_user: opencfp
 
-- name: install app dependencies
-  command: php composer.phar install chdir=/var/www/html/opencfp
-  become_user: opencfp
+- name: upload phinx.yml
+  copy: src=/home/vagrant/src/opencfp/phinx.yml dest=/var/www/html/opencfp/phinx.yml owner=opencfp group=opencfp mode=0644
+
+- name: upload production.yml
+  copy: src=/home/vagrant/src/opencfp/config/production.yml dest=/var/www/html/opencfp/config/production.yml owner=opencfp group=opencfp mode=0644
 
 - name: db migration
   command: php vendor/bin/phinx migrate -e production chdir=/var/www/html/opencfp

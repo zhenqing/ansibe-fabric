@@ -9,4 +9,4 @@ mysql_users:
   - name: root
     host: "%"
     password: 'root'
-    priv: "sample_app.*:ALL"
+    priv: "opencfp.*:ALL"
