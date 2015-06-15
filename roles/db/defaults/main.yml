@@ -1,12 +1,12 @@
 ---
 # defaults file for db
-mysql_root_password: 12345678
+mysql_root_password: root
 mysql_databases:
-  - name: sample_app
+  - name: opencfp
     encoding: latin1
     collation: latin1_general_ci
 mysql_users:
-  - name: sampleuser
+  - name: root
     host: "%"
-    password: '12345678'
+    password: 'root'
     priv: "sample_app.*:ALL"

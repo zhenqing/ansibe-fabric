@@ -1,25 +1,22 @@
 ---
 # tasks file for web
-- name: default php info file
-  copy: src=myinfo.php dest=/var/www/html/myinfo.php
-
-- name: setup sampleuser
-  user: name=sampleuser
+- name: setup opencfp
+  user: name=opencfp
 
 - name: install git
   apt: name=git
 
 - name: create dir for app
-  file: path=/var/www/html/sample_app state=directory owner=sampleuser
+  file: path=/var/www/html/opencfp state=directory owner=opencfp
 
 - name: checkout the app code
-  git: repo=https://github.com/StaymanHou/2015-dev-ops-sample-application.git dest=/var/www/html/sample_app
-  become_user: sampleuser
+  git: repo=https://github.com/zhenqing/opencfp.git dest=/var/www/html/opencfp
+  become_user: opencfp
 
 - name: install app dependencies
-  command: php composer.phar install chdir=/var/www/html/sample_app
-  become_user: sampleuser
+  command: php composer.phar install chdir=/var/www/html/opencfp
+  become_user: opencfp
 
 - name: db migration
-  command: php vendor/bin/phinx migrate -e production chdir=/var/www/html/sample_app
-  become_user: sampleuser
+  command: php vendor/bin/phinx migrate -e production chdir=/var/www/html/opencfp
+  become_user: opencfp
